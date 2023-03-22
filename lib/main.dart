@@ -26,11 +26,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _key,
       appBar: AppBar(
         title: Text('Actividad3 Drawer Rosales'),
       ),
@@ -107,15 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             SizedBox(
               height: 50,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                _key.currentState!.openDrawer(); //<-- SEE HERE
-              },
-              child: const Text(
-                'Elevated Button 1',
-                style: TextStyle(fontSize: 24),
-              ),
             ),
           ],
         ),
