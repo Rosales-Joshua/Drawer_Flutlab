@@ -4,7 +4,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  static const String _title = 'Flutter Stateful Clicker Counter';
+  static const String _title = 'Drawer en Flutlab';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Demo Click Counter'),
+        title: Text('Actividad3 Drawer Rosales'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -41,13 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
               // <-- SEE HERE
               decoration: BoxDecoration(color: const Color(0xff00f8ff)),
               accountName: Text(
-                "Pinkesh Darji",
+                "Joshua Rosales",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               accountEmail: Text(
-                "pinkesh.earth@gmail.com",
+                "rosales.joshua@gmail.com",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: Icon(
                 Icons.home,
               ),
-              title: const Text('Page 1'),
+              title: const Text('Pagina 1'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -67,7 +67,16 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: Icon(
                 Icons.train,
               ),
-              title: const Text('Page 2'),
+              title: const Text('Pagina 2'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.add_alarm_rounded,
+              ),
+              title: const Text('Pagina 3'),
               onTap: () {
                 Navigator.pop(context);
               },
