@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: _title,
       theme: ThemeData(
-        primarySwatch: Colors.cyan,
+        primarySwatch: Colors.red,
       ),
       home: MyHomePage(),
     );
@@ -26,9 +26,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(
         title: Text('Actividad3 Drawer Rosales'),
       ),
@@ -39,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const UserAccountsDrawerHeader(
               // <-- SEE HERE
-              decoration: BoxDecoration(color: const Color(0xff00f8ff)),
+              decoration: BoxDecoration(color: const Color(0xffff0000)),
               accountName: Text(
                 "Joshua Rosales",
                 style: TextStyle(
@@ -81,6 +83,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pop(context);
               },
             ),
+            AboutListTile(
+              // <-- SEE HERE
+              icon: Icon(
+                Icons.info,
+              ),
+              child: Text('Acerca De La App'),
+              applicationIcon: Icon(
+                Icons.local_play,
+              ),
+              applicationName: 'Mi Aplicacion',
+              applicationVersion: '1.0.25',
+              applicationLegalese: '© 2019 Company',
+              aboutBoxChildren: [
+                ///Content goes here...
+              ],
+            ),
           ],
         ),
       ),
@@ -89,6 +107,15 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             SizedBox(
               height: 50,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _key.currentState!.openDrawer(); //<-- SEE HERE
+              },
+              child: const Text(
+                'Elevated Button 1',
+                style: TextStyle(fontSize: 24),
+              ),
             ),
           ],
         ),
